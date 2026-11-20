@@ -1,0 +1,53 @@
+
+/* TodoList 任務清單最外層容器 */
+.todo-list {
+    display: flex;                     /* 啟用 Flexbox 彈性排版 */
+    flex-direction: column;            /* 子元素由上往下垂直排列 */
+    gap: 16px;                         /* 【修正註解】子元素之間保持 16px 間距 */
+}
+
+/* 全選功能的工具列 */
+.list-toolbar {
+    display: flex;                     /* 啟用 Flexbox 彈性排版 */
+    align-items: center;               /* 讓子元素沿交叉軸垂直置中 */
+    padding: 0 16px;                   /* 左右內距 16px，與下方任務內容對齊 */
+}
+
+/* 全選 Checkbox 與文字的排列 */
+.select-all {
+    display: flex;                     /* 啟用 Flexbox 排版 */
+    flex-direction: row;               /* Checkbox 與文字水平排列 */
+    align-items: center;               /* Checkbox 與文字垂直置中 */
+    gap: 12px;                         /* Checkbox 和文字之間保持 12px */
+    cursor: pointer;                   /* 滑鼠移入時顯示手型游標 */
+}
+
+/* 全選 Checkbox 的樣式 */
+.select-all input[type="checkbox"] {
+    width: 18px;                       /* 與下方任務 Checkbox 寬度一致 */
+    height: 18px;                      /* 與下方任務 Checkbox 高度一致 */
+    margin: 0;                         /* 移除瀏覽器預設外距 */
+    flex-shrink: 0;                    /* 避免 Checkbox 被壓縮 */
+    accent-color: rgb(23, 40, 150);    /* 設定 Checkbox 的勾選顏色為深藍色 */
+}
+
+/* 任務清單 ul 容器 */
+.task-list {
+    padding: 0;                        /* 移除 ul 預設的內距 */
+    margin: 0;                         /* 移除 ul 預設的外距 */
+    list-style: none;                  /* 移除清單項目前方的圓點符號 */
+    border-top: 1px solid gray;        /* 在任務清單上方加入 1px 灰色實線 */
+}
+
+/* 每一筆任務 li */
+.task-list-item {
+    padding: 16px;                     /* 上下左右內距皆為 16px */
+    border-bottom: 1px solid gray;     /* 在每筆任務下方加入 1px 灰色實線 */
+}
+
+/* 沒有任務時顯示的提示區 */
+.empty-state {
+    padding: 5px 0;                    /* 上下內距 5px，左右內距 0 */
+    color: gray;                       /* 將提示文字設定為灰色 */
+    text-align: center;                /* 讓提示文字水平置中 */
+}

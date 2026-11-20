@@ -1,0 +1,68 @@
+<!-- 【新增】TodoFooter 最外層容器 -->
+<footer class="todo-footer">
+
+    <!-- 【新增】任務統計區 -->
+    <div class="stats-row">
+
+        <!-- 未完成任務統計 -->
+        <div class="stat-item">
+            <span class="stat-number">{{ activeCount }}</span>
+            <span class="stat-label">待完成</span>
+        </div>
+
+        <!-- 已完成任務統計 -->
+        <div class="stat-item">
+            <span class="stat-number">{{ completedCount }}</span>
+            <span class="stat-label">已完成</span>
+        </div>
+
+    </div>
+
+    <!-- 【新增】篩選與操作工具列 -->
+    <div class="footer-toolbar">
+
+        <!-- 【新增】篩選按鈕群組 -->
+        <div class="filter-group">
+
+            <!-- 顯示全部任務 -->
+            <button
+                class="filter-btn"
+                [class.select]="nowStatus === todoStatus.All"
+                (click)="onStatusChange(todoStatus.All)"
+            >
+                全部
+            </button>
+
+            <!-- 顯示未完成任務 -->
+            <button
+                class="filter-btn"
+                [class.select]="nowStatus === todoStatus.Active"
+                (click)="onStatusChange(todoStatus.Active)"
+            >
+                未完成
+            </button>
+
+            <!-- 顯示已完成任務 -->
+            <button
+                class="filter-btn"
+                [class.select]="nowStatus === todoStatus.Completed"
+                (click)="onStatusChange(todoStatus.Completed)"
+            >
+                已完成
+            </button>
+
+        </div>
+
+        <!-- 有已完成任務時，才顯示刪除按鈕 -->
+        @if (completedCount !== 0) {
+            <button
+                class="clear-btn"
+                (click)="onDeleteCompleted()"
+            >
+                刪除已完成
+            </button>
+        }
+
+    </div>
+
+</footer>

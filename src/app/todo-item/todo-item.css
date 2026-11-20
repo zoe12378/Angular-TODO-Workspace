@@ -1,0 +1,97 @@
+
+/* 單筆任務的最外層容器 */
+.todo-row {
+    display: flex;                       /* 啟用 Flexbox 彈性排版 */
+    justify-content: space-between;      /* 讓任務內容靠左，操作按鈕靠右 */
+    align-items: center;                 /* 讓任務內容與操作按鈕垂直置中 */
+}
+
+/* 任務內容區：包含 Checkbox 與任務文字 */
+.todo-content {
+    display: flex;                       /* 啟用 Flexbox 彈性排版 */
+    flex: 1;                             /* 占用剩餘空間，讓右側操作按鈕靠右 */
+    align-items: center;                 /* 讓 Checkbox 與任務文字垂直置中 */
+    gap: 12px;                           /* Checkbox 與任務文字之間保持 12px 間距 */
+    min-width: 0;                        /* 允許內容區縮小，避免長文字撐破容器 */
+}
+
+/* 單筆任務 Checkbox */
+.todo-checkbox {
+    width: 18px;                         /* 設定 Checkbox 寬度為 18px */
+    height: 18px;                        /* 設定 Checkbox 高度為 18px */
+    margin: 0;                           /* 移除瀏覽器預設外距 */
+    flex-shrink: 0;                      /* 避免 Checkbox 被 Flexbox 壓縮 */
+    accent-color: rgb(23, 40, 150);      /* 設定 Checkbox 勾選時的顏色為深藍色 */
+}
+
+/* 任務文字 */
+.todo-text {
+    font-size: 20px;                     /* 設定任務文字大小為 20px */
+    overflow-wrap: anywhere;             /* 當文字太長時，允許在任意字元間換行 */
+    min-width: 0;                        /* 允許文字區域縮小，避免超出容器 */
+}
+
+/* 已完成任務的文字樣式 */
+.completed {
+    text-decoration: line-through;       /* 為已完成任務加上刪除線 */
+    color: #333333;                      /* 將已完成任務的文字設為深灰色 */
+}
+
+/* 一般模式的操作按鈕容器：包含編輯與刪除 */
+.todo-actions {
+    display: flex;                       /* 啟用 Flexbox 彈性排版 */
+    flex-direction: row;                 /* 讓編輯與刪除按鈕水平排列 */
+    gap: 10px;                           /* 兩顆按鈕之間保持 10px 間距 */
+    flex-shrink: 0;                      /* 避免操作按鈕區域被任務文字壓縮 */
+}
+
+/* 四種操作按鈕的共用樣式：編輯、刪除、儲存、取消 */
+.edit-btn,
+.delete-btn,
+.save-btn,
+.cancel-btn {
+    width: 52px;                         /* 統一四顆按鈕的寬度為 52px */
+    min-width: 52px;                     /* 限制按鈕最小寬度，避免小於 52px */
+    padding: 10px 0;                     /* 上下內距 10px，左右內距為 0 */
+    box-sizing: border-box;              /* 按鈕寬度包含 padding 與 border */
+    white-space: nowrap;                /* 避免按鈕文字自動換行 */
+    flex-shrink: 0;                      /* 避免按鈕在 Flexbox 中被壓縮 */
+    border: 0;                           /* 移除瀏覽器預設的按鈕邊框 */
+    cursor: pointer;                     /* 滑鼠移入按鈕時顯示手型游標 */
+}
+
+/* 一般模式的編輯與刪除按鈕 */
+.edit-btn,
+.delete-btn {
+    background-color: transparent;       /* 將按鈕背景設定為透明 */
+    color: #191919;                      /* 將按鈕文字設定為深灰黑色 */
+}
+
+/* 編輯模式的排列容器：包含輸入框、儲存與取消按鈕 */
+.edit-row {
+    display: flex;                       /* 啟用 Flexbox 彈性排版 */
+    align-items: center;                 /* 讓輸入框與操作按鈕垂直置中 */
+    gap: 10px;                           /* 輸入框與按鈕之間保持 10px 間距 */
+    width: 100%;                         /* 讓編輯區占滿父容器的可用寬度 */
+    min-width: 0;                        /* 允許編輯區縮小，避免超出容器 */
+}
+
+/* 編輯任務時使用的輸入框 */
+.edit-input {
+    flex: 1;                             /* 占用扣除按鈕與間距後的剩餘空間 */
+    min-width: 0;                        /* 允許輸入框縮小，避免擠壓操作按鈕 */
+    padding: 12px;                       /* 設定輸入框四周內距皆為 12px */
+    border: 1px solid gray;              /* 設定 1px 灰色實線邊框 */
+}
+
+/* 編輯模式的儲存按鈕 */
+.save-btn {
+    background-color: rgb(23, 40, 150);  /* 將儲存按鈕背景設定為深藍色 */
+    color: white;                        /* 將儲存按鈕文字設定為白色 */
+}
+
+/* 編輯模式的取消按鈕 */
+.cancel-btn {
+    background-color: transparent;       /* 將取消按鈕背景設定為透明 */
+    color: #191919;                      /* 將取消按鈕文字設定為深灰黑色 */
+}

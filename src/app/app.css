@@ -1,0 +1,19 @@
+
+/* 整個 Todo App 的外層容器 */
+.app-shell {
+    max-width: 900px;           /* 設定容器最大寬度為 900px */
+    margin: 0 auto;             /* 上下外距為 0，左右自動分配，使容器水平置中 */
+    padding: 32px 24px;         /* 上下內距由 48px 改為 32px，左右維持 24px */
+    display: flex;              /* 啟用 Flexbox 彈性排版 */
+    flex-direction: column;     /* 子元素由上往下垂直排列 */
+    box-sizing: border-box;     /* 元素寬度包含 padding 與 border */
+    width: 100%;                /* 容器占滿可用寬度，但不超過 900px */
+}
+
+/* Todo App 主要工作區：包含輸入、統計篩選及任務清單 */
+.todo-workspace {
+    display: flex;              /* 啟用 Flexbox 彈性排版 */
+    flex-direction: column;     /* 子元件由上往下垂直排列 */
+    padding: 16px 0;            /* 上下內距 16px，移除左右內距以統一對齊 */
+    gap: 16px;                  /* 子元件間距由 24px 縮小為 16px */
+}

@@ -1,0 +1,26 @@
+
+/* Todo App 標題區域 */
+.todo-header {
+    padding-bottom: 20px;              /* 【修改】底部內距由 25px 縮小為 20px，讓版面更緊湊 */
+    border-bottom: 2px solid #333333;   /* 在標題區下方加入 2px 深灰色實線 */
+}
+
+/* 標題上方的英文標籤 */
+.header-label {
+    font-size: 12px;                    /* 【修改】固定字體大小為 12px，建立清楚的文字層級 */
+    color: rgb(23, 40, 150);            /* 設定文字顏色為深藍色 */
+    letter-spacing: 4px;                /* 每個字元之間增加 4px 間距 */
+}
+
+/* Todo App 主標題 */
+.header-title {
+    font-size: 64px;                    /* 設定主標題大小為 64px */
+    font-weight: 700;                   /* 設定字體粗細為 700，呈現粗體效果 */
+    margin: 10px 0;                     /* 上下外距 10px，左右外距 0 */
+}
+
+/* 主標題下方的副標題 */
+.header-subtitle {
+    font-size: 14px;                    /* 【修改】字體大小由 medium 改為固定 14px */
+    color: gray;                        /* 設定副標題文字為灰色 */
+}

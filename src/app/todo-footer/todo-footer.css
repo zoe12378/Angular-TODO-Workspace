@@ -1,0 +1,72 @@
+
+/* TodoFooter 最外層容器 */
+.todo-footer {
+    display: flex;                       /* 啟用 Flexbox 彈性排版 */
+    flex-direction: column;              /* 子元素由上往下垂直排列 */
+    gap: 16px;                           /* 【修改】縮小統計區與工具列之間的間距 */
+}
+
+/* 任務統計區：包含未完成與已完成的統計資料 */
+.stats-row {
+    display: flex;                       /* 啟用 Flexbox 彈性排版 */
+    flex-direction: row;                 /* 讓兩組統計資料水平排列 */
+    gap: 32px;                           /* 【修改】讓兩組統計資料之間保持 32px 間距 */
+}
+
+/* 單一統計項目：包含數字與說明文字 */
+.stat-item {
+    display: flex;                       /* 啟用 Flexbox 彈性排版 */
+    flex-direction: row;                 /* 讓統計數字與說明文字水平排列 */
+    gap: 8px;                            /* 【修改】縮小數字與說明文字之間的距離 */
+    align-items: baseline;               /* 讓不同大小的文字依照基準線對齊 */
+}
+
+/* 任務統計數字 */
+.stat-number {
+    font-size: 36px;                     /* 【修改】數字大小由 40px 調整為 36px */
+    font-weight: bold;                   /* 將統計數字設定為粗體 */
+}
+
+/* 統計數字旁的說明文字 */
+.stat-label {
+    font-size: small;                    /* 使用較小的字體尺寸 */
+    color: gray;                         /* 將說明文字設定為灰色 */
+}
+
+/* 篩選按鈕與刪除按鈕的工具列 */
+.footer-toolbar {
+    display: flex;                       /* 啟用 Flexbox 彈性排版 */
+    flex-direction: row;                 /* 讓篩選區與刪除按鈕水平排列 */
+    justify-content: space-between;      /* 篩選區靠左、刪除按鈕靠右 */
+    flex-wrap: wrap;                     /* 空間不足時允許子元素自動換行 */
+    gap: 12px;                           /* 【新增】工具列換行時保留間距 */
+}
+
+/* 全部、未完成、已完成三個篩選按鈕的容器 */
+.filter-group {
+    display: flex;                       /* 啟用 Flexbox 彈性排版 */
+    flex-direction: row;                 /* 三個篩選按鈕水平排列 */
+    gap: 12px;                           /* 【新增】篩選按鈕之間保持 12px 間距 */
+}
+
+/* 一般篩選按鈕 */
+.filter-btn {
+    border: 0;                           /* 移除按鈕預設邊框 */
+    border-bottom: 1px solid transparent;/* 【新增】預留透明底線，避免切換選中狀態時高度變動 */
+    background-color: transparent;       /* 按鈕背景透明 */
+    padding: 6px 0;                      /* 【新增】控制按鈕上下內距 */
+}
+
+/* 目前被選中的篩選按鈕 */
+.filter-btn.select {
+    color: rgb(23, 40, 150);             /* 將選中按鈕的文字設定為深藍色 */
+    border-bottom-color: rgb(23, 40, 150); /* 【修改】將原本預留的底線改為深藍色 */
+}
+
+/* 刪除已完成任務按鈕 */
+.clear-btn {
+    border: 0;                           /* 移除按鈕預設邊框 */
+    background-color: transparent;       /* 按鈕背景透明 */
+    color: rgb(23, 40, 150);             /* 將按鈕文字設定為深藍色 */
+    padding: 6px 0;                      /* 【新增】讓高度與篩選按鈕更接近 */
+}

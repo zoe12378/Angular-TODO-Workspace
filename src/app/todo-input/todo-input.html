@@ -1,0 +1,34 @@
+<!-- 新增任務區域 -->
+<section class="todo-input">
+
+    <!-- 輸入區標題 -->
+    <label class="input-label" for="todoInput">
+        ADD A NEW TASK
+    </label>
+
+    <!-- 輸入框與按鈕的水平排列容器 -->
+    <div class="input-row">
+
+        <!-- 任務輸入框 -->
+        <input
+            id="todoInput"
+            #todoInput
+            class="task-input"
+            type="text"
+            placeholder="今天想完成什麼？"
+            (keyup.enter)="onAdd(todoInput.value) && (todoInput.value = '')"
+        >
+
+        <!-- 新增任務按鈕 -->
+        <button
+            class="add-btn"
+            type="button"
+            (click)="onAdd(todoInput.value) && (todoInput.value = '')"
+        >
+            <span>新增任務</span>
+            <span aria-hidden="true">＋</span>
+        </button>
+
+    </div>
+
+</section>

@@ -1,0 +1,59 @@
+<!-- 【新增】任務清單最外層容器 -->
+<section class="todo-list">
+
+  <!-- 【新增】全選功能區 -->
+  <div class="list-toolbar">
+
+    <!-- 【新增】使用 label 包住全選 Checkbox 與文字 -->
+    <label class="select-all">
+
+      <!-- 保留原本的全選功能 -->
+      <input
+        type="checkbox"
+        [checked]="allCompleted"
+        (change)="onChangeAllCheckbox()"
+      >
+
+      <!-- 全選說明文字 -->
+      <span>全選任務</span>
+
+    </label>
+
+  </div>
+
+  <!-- 【新增】任務清單容器 -->
+  <ul class="task-list">
+
+    <!-- 保留原本的 @for 迴圈 -->
+    @for (item of todoList; track item.id) {
+
+      <!-- 【新增】單筆任務的 Class -->
+      <li class="task-list-item">
+
+        <!-- 保留原本的 TodoItem 與事件綁定 -->
+        <app-todo-item
+          [todo]="item"
+          (toggleTodo)="onToggle($event)"
+          (deleteTodo)="onDelete($event)"
+          (updateTodo)="onUpdate($event.id, $event.value)"
+          (cancelUpdateTodo)="onCancelUpdate($event)"
+          (editTodo)="onEdit($event)"
+        ></app-todo-item>
+
+      </li>
+
+    } @empty {
+
+      <!-- 【新增】空清單提示 Class -->
+      <li class="empty-state">
+
+        <!-- 沒有任務時顯示提示文字 -->
+        <span>目前沒有任務，新增一項開始吧！</span>
+
+      </li>
+
+    }
+
+  </ul>
+
+</section>

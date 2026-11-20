@@ -1,0 +1,48 @@
+
+/* Todo App 新增任務的主要區域 */
+.todo-input {
+    display: flex;                      /* 啟用 Flexbox 彈性排版 */
+    flex-direction: column;             /* 子元素由上往下垂直排列 */
+    gap: 12px;                          /* 【修改】由 24px 改成 12px，縮小標籤與輸入列的距離 */
+}
+
+/* 輸入框與新增按鈕的水平排列區域 */
+.input-row {
+    display: flex;                      /* 啟用 Flexbox，讓輸入框與按鈕水平排列 */
+    gap: 12px;                          /* 【修改】由 24px 改成 12px，讓輸入框與按鈕更緊湊 */
+    align-items: stretch;               /* 【新增】讓輸入框與按鈕沿交叉軸延伸至相同高度 */
+}
+
+/* 任務文字輸入框 */
+.task-input {
+    flex: 1;                            /* 【修改】占據扣除按鈕與間距後的剩餘空間 */
+    padding: 12px 16px;                 /* 【修改】上下內距 12px，左右內距 16px */
+    border: 1px solid #333333;          /* 設定 1px 深灰色實線邊框 */
+    min-width: 0;                       /* 允許輸入框縮小，避免 Flexbox 排版超出容器 */
+    background-color: #FFFFFF;          /* 【新增】使用白色背景，讓輸入區與暖灰底色有區別 */
+}
+
+/* 新增任務按鈕 */
+.add-btn {
+    background-color: rgb(23, 40, 150); /* 【修改】明確設定按鈕背景為深藍色 */
+    color: white;                       /* 設定按鈕文字為白色 */
+    padding: 12px 20px;                 /* 【修改】上下內距 12px，左右內距 20px */
+    border: 0;                          /* 【新增】移除按鈕預設邊框 */
+    white-space: nowrap;                /* 【新增】避免「新增任務」文字換行 */
+    flex-shrink: 0;                     /* 【新增】避免按鈕在 Flexbox 中被壓縮 */
+}
+
+/* 【新增】手機版樣式：螢幕寬度不超過 600px 時生效 */
+@media (max-width: 600px) {
+    .input-row {
+        gap: 8px;                       /* 手機版縮小輸入框與按鈕的距離 */
+    }
+
+    .task-input {
+        padding: 10px 12px;             /* 手機版縮小輸入框內距 */
+    }
+
+    .add-btn {
+        padding: 10px 12px;             /* 手機版縮小按鈕內距，保留更多輸入空間 */
+    }
+}

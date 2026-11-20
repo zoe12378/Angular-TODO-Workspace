@@ -1,1 +1,37 @@
-/* You can add global styles to this file, and also import other style files */
+/* 【新增】設定整個網站的盒模型計算方式 */
+* {
+    box-sizing: border-box;            /* 元素寬高包含 padding 與 border */
+}
+
+/* 【新增】設定整個網站的基本樣式 */
+body {
+    margin: 0;                         /* 移除瀏覽器預設的外距 */
+    min-height: 100vh;                 /* 網頁至少與瀏覽器視窗一樣高 */
+    background-color: #F5F4F0;         /* 設定暖灰白色背景，呈現編輯式極簡風格 */
+    color: #191919;                    /* 設定全站預設文字為深灰黑色 */
+    font-family: Arial, "Noto Sans TC", sans-serif; /* 優先使用乾淨的無襯線字體 */
+}
+
+/* 【新增】讓表單元素使用與網站一致的字體 */
+button,
+input {
+    font: inherit;                     /* 繼承父元素的字型、字體大小與粗細 */
+}
+
+/* 【新增】設定所有按鈕的基本互動效果 */
+button {
+    cursor: pointer;                   /* 滑鼠移到按鈕時顯示手型游標 */
+    transition: opacity 0.2s ease;     /* 透明度變化時使用 0.2 秒平滑過渡 */
+}
+
+/* 【新增】滑鼠移到按鈕時的效果 */
+button:hover {
+    opacity: 0.8;                      /* 讓按鈕稍微變淡，提示可以點擊 */
+}
+
+/* 【新增】鍵盤操作時顯示焦點 */
+button:focus-visible,
+input:focus-visible {
+    outline: 2px solid #172896;        /* 顯示 2px 深藍色焦點外框 */
+    outline-offset: 3px;               /* 讓焦點外框與元素保留 3px 距離 */
+}

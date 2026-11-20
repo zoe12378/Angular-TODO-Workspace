@@ -1,0 +1,87 @@
+<!-- 【新增】單筆任務的最外層容器 -->
+<div class="todo-row">
+
+  <!-- 判斷目前是否進入編輯模式 -->
+  @if (todo.editing) {
+
+    <!-- 【新增】編輯模式的排列容器 -->
+    <div class="edit-row">
+
+      <!-- 編輯任務的輸入框 -->
+      <input
+        #editInput
+        class="edit-input"
+        type="text"
+        [value]="todo.thing"
+        (keyup.enter)="onUpdate(todo.id, editInput.value)"
+      >
+
+      <!-- 儲存修改 -->
+      <button
+        class="save-btn"
+        type="button"
+        (click)="onUpdate(todo.id, editInput.value)"
+      >
+        儲存
+      </button>
+
+      <!-- 取消編輯 -->
+      <button
+        class="cancel-btn"
+        type="button"
+        (click)="onCancelUpdate()"
+      >
+        取消
+      </button>
+
+    </div>
+
+  } @else {
+
+    <!-- 【新增】任務內容區：包含 Checkbox 與文字 -->
+    <label class="todo-content">
+
+      <!-- 勾選或取消完成任務 -->
+      <input
+        class="todo-checkbox"
+        type="checkbox"
+        [checked]="todo.completed"
+        (change)="onToggle()"
+      >
+
+      <!-- 任務名稱；完成後套用 completed 樣式 -->
+      <span
+        class="todo-text"
+        [class.completed]="todo.completed"
+      >
+        {{ todo.thing }}
+      </span>
+
+    </label>
+
+    <!-- 【新增】任務操作按鈕容器 -->
+    <div class="todo-actions">
+
+      <!-- 編輯任務 -->
+      <button
+        class="edit-btn"
+        type="button"
+        (click)="onEdit()"
+      >
+        編輯
+      </button>
+
+      <!-- 刪除任務 -->
+      <button
+        class="delete-btn"
+        type="button"
+        (click)="onDelete()"
+      >
+        刪除
+      </button>
+
+    </div>
+
+  }
+
+</div>
